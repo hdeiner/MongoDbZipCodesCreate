@@ -20,6 +20,7 @@ public class ZipCodeDatabaseCreate {
         try {
 
             MongoClient mongoClient = new MongoClient("localhost", 27017);
+            mongoClient.dropDatabase("zipCodes");
             MongoDatabase db = mongoClient.getDatabase("zipCodes");
             MongoCollection<Document> documentMongoCollection = db.getCollection("zips");
 
